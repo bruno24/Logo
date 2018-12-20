@@ -1,0 +1,134 @@
+
+body {
+ 	background-color: #fff;
+
+}
+
+*, ::after, ::before {
+    box-sizing: border-box;
+}
+.logo	{
+  width: 1000px;
+  height: 1000px;
+  margin: 0 auto;
+  padding: 2.5%;
+
+}
+
+div.one, div.two	{
+ 	margin: 0;
+  padding: 0;
+  float: left;
+  background: transparent;
+  height: 100%;
+  width: 50%;
+  overflow: hidden;
+  position: relative;
+  z-index:2
+
+}
+div span	{
+  display: block;
+  width: 200%;
+  height: 100%;
+  box-sizing: border-box;
+  float: left;
+  background: #000;
+  border: 450px solid rgba(150,48,90,.8);
+  border-radius: 200%;
+  border-left-color: transparent;
+  border-top-color: transparent;
+  position: absolute;
+  z-index:0
+}
+div.one span	{
+  transform: rotate(135deg);
+  animation: rotate1 8s infinite linear;
+}
+div.two span	{
+  transform: rotate(-45deg);
+  animation: rotate2 8s infinite linear;
+ }
+div.two span	{
+	margin-left: -100%;
+}
+.logo:hover div.one span, .logo:hover div.two span	{
+ 	 animation-play-state: paused;
+}
+
+@keyframes rotate1	{
+  0% { transform: rotate(135deg); opacity: 1; 	}
+  50% {  transform: rotate(135deg); }
+ 	100% {  transform: rotate(315deg); opacity: 1; 	}
+}
+@keyframes rotate2	{
+  0% {  transform: rotate(-45deg); opacity: 1; 	}
+  50% {  transform: rotate(135deg);}
+  100% { transform: rotate(136deg); opacity: 1; }
+}
+@-webkit-keyframes rotate1	{
+  0% { transform: rotate(135deg); 	}
+  50% {  transform: rotate(135deg); }
+ 	100% {  transform: rotate(315deg); 	}
+}
+@-webkit-keyframes rotate2	{
+  0% {  transform: rotate(-45deg); 	}
+  50% {  transform: rotate(135deg);}
+  100% { transform: rotate(136deg); }
+}
+
+
+
+svg {
+  width: 100%;
+  height: 100%;
+  display: inline-block;
+  top: 10px; left: 50px;
+  position: absolute;
+  z-index:5
+}
+
+.path {
+  stroke: #FBFBFB;
+  fill: #FBFBFB;
+  fill-opacity:0;
+  position: relative;
+
+}
+
+.letter1 {
+  stroke-dasharray: 680;
+  stroke-dashoffset: 680;
+  animation: anim2 0.7s linear 2s forwards, anim4 1s linear 3s forwards;
+}
+@keyframes anim2 {
+  0%  {
+    stroke-dashoffset: 680;
+  }
+  100% {
+    stroke-dashoffset: 0;
+
+  }
+}
+.letter2 {
+  stroke-dasharray: 910;
+  stroke-dashoffset: 910;
+  animation: anim3 0.7s linear 2s forwards, anim4 1s linear 3s forwards;
+}
+@keyframes anim3 {
+  0%  {
+    stroke-dashoffset: 910;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes anim4 {
+  0% {
+    fill-opacity: 0;
+  }
+  100% {
+    fill-opacity: 1;
+  }
+}
